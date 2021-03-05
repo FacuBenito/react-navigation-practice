@@ -14,6 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+
         screenOptions={({ route }) => ({
 
           tabBarIcon: ({ focused, color, size }) => {
@@ -38,15 +39,19 @@ export default function App() {
           
         })}
         tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray'
+          activeTintColor: 'pink',
+          inactiveTintColor: 'lightgray',
+          style: {
+            backgroundColor: '#221177',
+          },
+          showLabel: false
         }}
       >
-        <Tab.Screen name='Home' component={HomeStack} options={{tabBarBadge: 3}}/>
-        <Tab.Screen name='Settings' component={SettingsStack} />
-        <Tab.Screen name='Create' component={CreateScreen} />
-        <Tab.Screen name='Team' component={TeamScreen} />
-        <Tab.Screen name='User' component={UserScreen} />
+        <Tab.Screen name='Home' component={HomeStack} options={{ tabBarLabel: 'Inicio' }}/>
+        <Tab.Screen name='Settings' component={SettingsStack} options={{ tabBarLabel: 'Opciones' }}/>
+        <Tab.Screen name='Create' component={CreateScreen} options={{ tabBarLabel: 'Crear' }}/>
+        <Tab.Screen name='Team' component={TeamScreen} options={{ tabBarLabel: 'Mis Equipos' }} />
+        <Tab.Screen name='User' component={UserScreen} options={{ tabBarLabel: 'Perfil' }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
